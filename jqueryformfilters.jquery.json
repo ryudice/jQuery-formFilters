@@ -1,0 +1,28 @@
+{
+  "name": "jqueryformfilters",
+  "title": "jQuery Form Filters",
+  "description": "Allows you to clear formvalues easily",
+  "version": "1.0",
+  "homepage": "",
+  "author": {
+    "name": "Roberto Yudice",
+    "url": "https://github.com/ryudice"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.9"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ]
+}
