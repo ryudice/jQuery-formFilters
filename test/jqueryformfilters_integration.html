@@ -18,8 +18,25 @@
 </head>
 <body>
 
-    <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
+  <form>
+    <label for="name" >Name</label>
+    <input id="name" type="text" />
+
+    <label for="lastname" >Last name</label>
+    <input id="lastname" type="text" />
+
+    <label for="age" >Age</label>
+    <input id="age" type="text" />
+
+  </form>
+  <script type="text/javascript">
+    _$(function(){
+      //_$.awesome({renderTo: "#filters" });
+      _$("form").formFilters({renderTo: "#filters" });
+
+    });
+  </script>
+  <div id="filters"></div>
 
 </body>
 </html>

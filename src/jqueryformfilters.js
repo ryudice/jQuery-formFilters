@@ -18,35 +18,30 @@
       var _self = this;
       this.observable = function () {
         if (arguments.length > 0) {
-            // Write
-          
+       
             _value = arguments[0];
             if (_self.callback) {
               _self.callback();
-            };
+            }
             
-            return this; // Permits chained assignments
+            return this; 
         }
-        else {
-            // Read            
+        else {         
             return _value;
         }
-      }
-
-      if (value == undefined) {
-        return value; 
       };
 
+      if (value === undefined) {
+        return value; 
+      }
+
       this.callback= callback;
-
       _value = value;
-
       
       return this.observable;
-
     };
 
-    return this.each(function (i) {
+    return this.each(function () {
       // Do something awesome to each selected element.
       $(this).find("input,select").each(function(i,input){
         var label = $("label[for='"+ $(input).attr("id") + "']").first();
@@ -55,7 +50,7 @@
         {
           var observable = new Observable($(this).val(), function(){
             var value = this.observable();
-            if (value =='' || value == null) {
+            if (value === '' || value === null) {
               element.hide();
             }
             else
@@ -73,7 +68,7 @@
                 var existingGroup;
                 element = $("<li><span class='input-label'>" + group + "</span><span class='input-value'></span></li>").hide();
                 $.each(inputs, function(index, o) {
-                    if (o.group == group) {
+                    if (o.group === group) {
                         existingGroup = o;
                         return false;
                     }
@@ -92,7 +87,7 @@
                 filterInput = { label: $(label).html(), input: input, value: observable, element: element, group: null, labelElement: label};
             }
 
-            var link = $("<a href='#'>Remover</a>").on('click', function (evt) {
+            var link = $("<a href='#'>" + $.formFilters.options.removeLabel + "</a>").on('click', function (evt) {
                 if ($(filterInput.input).is(":radio")) {
                     var group = $("input:radio[data-filter-group='" + filterInput.group + "']");
                     group.removeAttr("checked").filter("[value='']").attr("checked", "checked").change();
@@ -127,17 +122,12 @@
             });
 
           inputs.push(filterInput);
-        };
+        }
       });
 
       $($.formFilters.options.renderTo).append($.map(inputs, function(input){  
           return input.element;
       }));
-
-      /*$($.map(inputs, function(input){  
-          return input.element;
-      }) ).appendTo($($.awesome.options.renderTo))*/
-      //$(this).html('awesome' + i);
     });
   };
 
@@ -153,7 +143,8 @@
   // Static method default options.
   $.formFilters.options = {
     renderTo: null,
-    onClear: null
+    onClear: null,
+    removeLabel: "Remove"
   };
 
   
