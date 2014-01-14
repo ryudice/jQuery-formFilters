@@ -11,21 +11,20 @@ Download the [production version][min] or the [development version][max].
 
 In your web page:
 
-```html
-<script src="jquery.js"></script>
-<script src="dist/jqueryformfilters.min.js"></script>
-<script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
+```javascript
+$(function(){
+
+  $("form").formFilters({renderTo: "#filters" });
+
 });
-</script>
 ```
 
 ## Documentation
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+JS Fiddle: [http://jsfiddle.net/ryudice/W892V/2/](http://jsfiddle.net/ryudice/W892V/2/)
+Just or type in anything select anything on the form fields 
 
 ## Release History
-_(Nothing yet)_
+1.0.0
