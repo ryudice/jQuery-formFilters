@@ -1,6 +1,6 @@
 # jQuery Form Filters
 
-Allows you to clear formvalues easily
+Automatically adds a link to clear specific form fields from your form. Useful in search form scenarios.
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ $(function(){
 ```
 
 ## Documentation
-_(Coming soon)_
+Please see JSFiddle example. 
 
 ## Examples
 JS Fiddle: [http://jsfiddle.net/ryudice/W892V/2/](http://jsfiddle.net/ryudice/W892V/2/)
